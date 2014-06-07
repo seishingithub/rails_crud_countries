@@ -1,0 +1,21 @@
+<%= form_for @country do |f| %>
+  <p>
+    <%= f.label :country_name %>
+    <%= f.text_field :country_name %>
+  </p>
+  <p>
+    <%= f.label :language_spoken %>
+    <%= f.text_field :language_spoken %>
+  </p>
+  <p>
+    <%= f.submit 'Create country' %>
+  </p>
+<% end %>
+
+<% @countries.each do |country| %>
+<ul>
+  <li>
+    <%= country.country_name %>, <%= country.language_spoken %>
+  </li>
+</ul>
+<% end %>
