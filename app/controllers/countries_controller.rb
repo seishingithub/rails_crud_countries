@@ -29,6 +29,12 @@ class CountriesController < ApplicationController
     redirect_to countries_path
   end
 
+  def destroy
+    @country = Country.find(params[:id]).delete
+
+    redirect_to countries_path
+  end
+
   private
   def country_params
     params.require(:country).permit(:country_name, :language_spoken)
